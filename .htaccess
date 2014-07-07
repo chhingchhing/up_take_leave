@@ -1,0 +1,12 @@
+Options -MultiViews
+
+RewriteEngine on
+RewriteCond $1 !^(index\.php|resources|robots\.txt)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?/$1 [L,QSA] 
+
+## RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+ RewriteRule ^page$ index.php?language=en&page=/page/page [L]
+ RewriteRule ^page/ index.php?language=en&page=/page [L]
