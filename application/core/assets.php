@@ -1,6 +1,6 @@
 <?php 
 
-// class Asset {
+class Assets {
 
 	function get_css_files()
 	{
@@ -13,9 +13,9 @@
 	function get_js_files()
 	{
 		return array(
-			array('path' =>'assets/javascripts/jquery-1.10.2.js'),
+			array('path' =>'assets/javascripts/jquery.1.11.1.js'),
 			array('path' =>'assets/layout/bootstrap.min.js'),
 		);
 	}
 
-// }
+}
