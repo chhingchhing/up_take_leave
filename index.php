@@ -63,7 +63,7 @@ if ( !isset($_SESSION['logged_id']) ) {
 			$empObj = new Employee();
 			$info = $empObj->get_info($_SESSION['logged_id']);
 			// var_dump($info['usertype_name']); die();
-			
+
 			// First is loading dashboard page
 			$sysObj->load_page("application/views/dashboard");
 		}
@@ -71,7 +71,10 @@ if ( !isset($_SESSION['logged_id']) ) {
 		// Logout and destroy all sessions
 		if (isset($_GET['act'])) {
 			if ($_GET['act'] == "logout") {
-				$sysObj->logout_system();
+				$logout = $sysObj->logout_system();
+				if ($logout) {
+					header("Location: index.php");
+				}
 			}
 		}
 	// }

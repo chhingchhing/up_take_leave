@@ -26,6 +26,7 @@ class System extends System_mod {
 	// Logout will destroy all session of user
 	function logout_system() {
 		session_destroy();
+		return true;
 	}
 
 	// Load include the file view
