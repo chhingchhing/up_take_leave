@@ -20,6 +20,9 @@
     <a href="?views=reports">Report</a>
   </li>
   <li class="list-group-item">
+    <a href="?views=profiles">Profile</a>
+  </li>
+  <li class="list-group-item">
     <!-- <span class="badge">14</span> -->
     <a href="?act=logout">Logout</a>
   </li>
