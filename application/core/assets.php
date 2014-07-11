@@ -6,7 +6,8 @@ class Assets {
 	{
 		return array(
 			array('path' =>'assets/layout/css/bootstrap.min.css', 'media' => 'all'),
-			array('path' =>'assets/layout/css/bootstrap-theme.min.css', 'media' => 'all'),
+			// array('path' =>'assets/layout/css/bootstrap-theme.min.css', 'media' => 'all'),
+			array('path' =>'assets/stylesheets/login.css', 'media' => 'all'),
 		);
 	}
 
