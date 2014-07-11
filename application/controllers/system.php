@@ -1,6 +1,7 @@
 <?php
 require_once('application/connection/config.php');
 require_once('application/models/system.php');
+require_once('application/models/system.php');
 
 class System extends System_mod {
 
@@ -13,8 +14,8 @@ class System extends System_mod {
 				$_SESSION['full_name'] = strtoupper($GetingRow["last_name"]).' '.ucfirst($GetingRow["first_name"]); //create user fullname logged session
 			}
 
-			// header("location:application/controllers/main.php"); //this is redirect to control panel
-			header("location:application/apps.php"); //this is redirect to control panel
+			header('Location: '.$_SERVER['PHP_SELF']);
+			// header("location:application/apps.php"); //this is redirect to control panel
 		} else {
 			// echo "Invalid username or password provided."; die();
 			$_SESSION['msg_error'] = "<p style='color:red;'>Invalid username and password!</p>"; //this is variable for create session
@@ -25,6 +26,12 @@ class System extends System_mod {
 	// Logout will destroy all session of user
 	function logout_system() {
 		session_destroy();
+	}
+
+	// Load include the file view
+	function load_page($path)
+	{
+		return include($path.".php");
 	}
 
 }

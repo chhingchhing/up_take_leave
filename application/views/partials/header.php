@@ -9,9 +9,15 @@
     <link rel="icon" href="../assets/images/up.jpg" type="image/x-icon"/>
 
     <title><?php echo TITLE; ?></title>
-    <link rel="stylesheet" type="text/css" href="../assets/layout/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../assets/layout/css/bootstrap-theme.min.css">
-
+    <?php 
+    
+    foreach ($assetsObj->get_css_files() as $css_file) {
+      ?>
+      <link rel="stylesheet" rev="stylesheet" href="<?php echo $css_file['path'].'?';?>" media="<?php echo $css_file['media'];?>" />
+      <?php
+    }
+    ?>
+    
   </head>
 
   <body>
