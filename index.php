@@ -31,18 +31,26 @@ include("application/views/partials/header.php");
 
 // $select_menu = "main.php";
 ?>
-<div class="container">
+<div id="wrapper">
 <?php 
 if ( !isset($_SESSION['logged_id']) ) {
 	// include("application/views/login.php");
 	$sysObj->load_page("application/views/login");
 	// header('Location: '.$_SERVER['PHP_SELF']);
 } else {
-?>
+?>  
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="margin-bottom: 0">
+		<?php //$sysObj->load_page("application/views/partials/nav_toggle"); ?>
+		<?php //$sysObj->load_page("application/views/partials/nav_top"); ?>
+	</nav>
+		header
+
+	</div>
 	<div class="col-md-3">
-		<?php $sysObj->load_page("application/views/partials/nav-left"); ?>
+		<?php $sysObj->load_page("application/views/partials/nav_left"); ?>
 	</div>
 	<div class="col-md-9">
+
 	<?php
 	/*if ( !isset($_SESSION['logged_id']) ) {
 		// include("application/views/login.php");
@@ -60,12 +68,23 @@ if ( !isset($_SESSION['logged_id']) ) {
 			}*/
 			$sysObj->load_page("application/views/".$_GET['views']."/manage");
 		} else {
-			$empObj = new Employee();
-			$info = $empObj->get_info($_SESSION['logged_id']);
+			//$empObj = new Employee();
+			//$info = $empObj->get_info($_SESSION['logged_id']);
 			// var_dump($info['usertype_name']); die();
 
 			// First is loading dashboard page
-			$sysObj->load_page("application/views/dashboard");
+			//$sysObj->load_page("application/views/dashboard");
+			?>
+        <!-- /.row -->
+        <div class="row">
+        	<div class="col-lg-12">
+            <?php $sysObj->load_page("application/views/partials/table"); ?>
+            <!-- /.col-lg-8 -->
+            <?php //$sysObj->load_page("application/views/partials/nav_right"); ?>
+        </div>
+        <!-- /.row -->
+    	</div>
+			<?php
 		}
 
 		// Logout and destroy all sessions
@@ -84,7 +103,9 @@ if ( !isset($_SESSION['logged_id']) ) {
 <?php }
 ?>
 </div>
-
-
+<div style="clear:both;">&nbsp;</div>
+           <div class="row clearfix footer">
+           <center><p>Copy@right By: <a href="#">Codingate Team</a></p></center>
+    </div>
 
 <?php include("application/views/partials/footer.php"); ?>

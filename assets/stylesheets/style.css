@@ -10,3 +10,8 @@
 .profile-img{width:96px;height:96px;display:block;-moz-border-radius:50%;-webkit-border-radius:50%;border-radius:50%;margin:0 auto 10px;}
 .need-help{margin-top:10px;}
 .new-account{display:block;margin-top:10px;}
+.footer {
+    background-color: #5cb85c;
+    color: #ffffff;
+    padding: 10px 10px 5px;
+}
