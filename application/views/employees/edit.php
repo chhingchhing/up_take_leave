@@ -78,7 +78,7 @@ if (isset($_GET['act'])) {
   <div class="form-group">
     <label for="inputConPass" class="col-sm-4 control-label">Confirm Password</label>
     <div class="col-sm-8">
-      <input type="password" class="form-control" id="inputConPass" placeholder="Password" name="txtConPass">
+      <input type="password" class="form-control" id="inputConPass" placeholder="Confirm Password" name="txtConPass">
     </div>
   </div>
   <div class="form-group">

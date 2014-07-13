@@ -65,18 +65,46 @@ class Employee {
 	}
 
 	// Save employee
-	function save(&$profile_data, &$user_data, $user_id=false) {
+	function save(&$profile_data, &$user_data, &$managerSubordinate, $user_id=false) {
 		$success = false;
 		//Run these queries as a transaction, we want to make sure we do all or nothing
 		$configObj = new Config();
 		$configObj->begin();
 
-		if (!$user_id OR $this->check_user_exist($user_id)) {
-			if ($this->save_user($user_data, $user_id)) {
-				
+		if ($this->save_user($user_data, $user_id)) {
+			$user_id = $user_data['user_id'] = $user_id;
+			// save to profile
+			if ($this->save_profile($profile_data, $user_id)) {
+				$success = $this->save_manager_subordinate($managerSubordinate, $user_id);
 			}
 		}
+
+		$configObj->commit();
+		return $success;
 		
+	}
+
+	// Save manager + Subordinate
+	function save_manager_subordinate(&$managerSubordinate, $user_id) {
+		// Check existing manager_id
+		$query = "SELECT * FROM up_managers AS manager
+			WHERE subdonate_id='" . $user_id . "'"; 
+
+		//this is for executing query data
+		$result = mysql_query($query);
+		if (mysql_num_rows($result) > 0) {
+			$query_update = "UPDATE up_managers SET manager_id = $managerSubordinate WHERE subdonate_id = $user_id";
+			if (mysql_query($query_update)) {
+				return true;
+			}
+			return false;
+		} else {
+			$query_add = "INSERT INTO up_managers(manager_id, subdonate_id) VALUES ($managerSubordinate, $user_id)";
+			if (mysql_query($query_add)) {
+				return true;
+			}
+			return false;
+		}
 	}
 
 	// Save profile information
@@ -87,21 +115,20 @@ class Employee {
 
 		if (!$user_id OR !$this->check_user_exist($user_id)) {
 			$query = "INSERT INTO `up_users`($columns) VALUES ($values)";
-			if ($query) {
+			if (mysql_query($query)) {
 				$user_data['user_id'] = mysql_insert_id();
 				return true;
-			} else {
-				return false;
 			}
+			return false;
 		} else {
 			$string = '';
 			foreach ($user_data as $key => $value) {
-				$string .= "$key=$value, ";
+				$string .= "$key='$value', ";
 			}
 			// Remove last character from string set new value
 			$string = rtrim($string, ", ");
 			$query = "UPDATE up_users SET $string WHERE user_id = $user_id";
-			if ($query) {
+			if (mysql_query($query)) {
 				return true;
 			}
 			return false;
@@ -118,6 +145,35 @@ class Employee {
 		$escaped_values = array_map('mysql_real_escape_string', array_values($insData));
 		$values  = implode(", ", $escaped_values);
 		$sql = "INSERT INTO `fbdata`($columns) VALUES ($values)";*/
+	}
+
+	// Save profile
+	function save_profile(&$profile_data, $user_id) {
+		$columns = implode(", ",array_keys($profile_data));
+		$escaped_values = array_map('mysql_real_escape_string', array_values($profile_data));
+		$values  = implode(", ", $escaped_values);
+
+		if (!$user_id OR !$this->check_user_exist($user_id)) {
+			$query = "INSERT INTO `up_user_profile`($columns) VALUES ($values)";
+			if (mysql_query($query)) {
+				$profile_data['user_id'] = mysql_insert_id();
+				return true;
+			} else {
+				return false;
+			}
+		} else {
+			$string = '';
+			foreach ($profile_data as $key => $value) {
+				$string .= "$key='$value', ";
+			}
+			// Remove last character from string set new value
+			$string = rtrim($string, ", ");
+			$query = "UPDATE up_user_profile SET $string WHERE user_id = $user_id";
+			if (mysql_query($query)) {
+				return true;
+			}
+			return false;
+		}
 	}
 
 	// Check user exist
