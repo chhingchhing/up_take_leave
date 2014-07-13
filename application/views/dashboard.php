@@ -14,3 +14,7 @@ content of dashboard is over there!
 	<li><a href="?views=reports">Report</a></li>
 	<li><a href="?act=logout">Logout</a></li>
 </ul>
+<?php 
+$empObj = new Employee();
+$info = $empObj->get_info($_SESSION['logged_id']);
+echo $info['usertype_name']; ?>
