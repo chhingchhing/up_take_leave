@@ -114,7 +114,10 @@ class Employee {
 		$values  = implode(", ", $escaped_values);
 
 		if (!$user_id OR !$this->check_user_exist($user_id)) {
-			$query = "INSERT INTO `up_users`($columns) VALUES ($values)";
+			var_dump($columns);
+			var_dump($values);
+			$query = "INSERT INTO up_users ($columns) VALUES ('$values')";
+			var_dump(mysql_query($query)); die();
 			if (mysql_query($query)) {
 				$user_data['user_id'] = mysql_insert_id();
 				return true;

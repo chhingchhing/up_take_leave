@@ -5,7 +5,7 @@ $employees = $empObj->get_all();
 
 ?>
 <div class="col-md-12">
-	<a href="" class="btn btn-default btn-sm" role="button" data-toggle="modal" data-target="#newEditEmployee">
+	<a href="" class="btn btn-default btn-sm" role="button" id="clickNewEditEmployee" data-url="application/views/employees/edit.php?act=edit&item=-1" data-toggle="modal" data-target="#newEditEmployee">
 		<span class="glyphicon glyphicon-star"></span> New
 	</a>
 	<!-- <a href="" class="btn btn-default btn-sm" role="button">

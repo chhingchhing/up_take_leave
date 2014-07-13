@@ -7,6 +7,7 @@ include("../../models/user_type.php");
 
 $first_name = "";
 $last_name = "";
+$dob = "";
 $email = "";
 $phone = "";
 $phone2 = "";
@@ -19,13 +20,11 @@ $address = "";
 $picture = "";
 $user_id = -1;
 
-
 if (isset($_GET['act'])) {
-	if ($_GET['act'] == "edit") {
+	if ($_GET['act'] == "edit" && $_GET['item'] != -1) {
 		$empObj = new Employee();
     $info = $empObj->get_info($_GET['item']);
   	// echo $info['usertype_name'];
-
     $first_name = $info['first_name'];
     $last_name = $info['last_name'];
     $dob = $info['dob'];
@@ -42,6 +41,7 @@ if (isset($_GET['act'])) {
     $user_id = $info['user_id'];
 	}
 }
+
 ?>
 
   <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
@@ -155,6 +155,7 @@ if (isset($_GET['act'])) {
     	<select class="form-control" name="manager">
 			<option selected="selected" value="">-- Select --</option>
       <?php 
+      $empObj = new Employee();
       $managers = $empObj->get_as_manager();
       while ($managerRows = mysql_fetch_array($managers)) {
         if ($managerRows['user_id'] == $manager) {
@@ -170,7 +171,6 @@ if (isset($_GET['act'])) {
       ?>
 		</select>
     </div>
-    
   </div>
   <div class="form-group">
     <label for="department" class="col-sm-4 control-label">Department</label>
