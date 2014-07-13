@@ -10,3 +10,5 @@ content of dashboard is over there!
 $empObj = new Employee();
 $info = $empObj->get_info($_SESSION['logged_id']);
 echo $info['usertype_name']; ?>
+
+<h3>Welcome Page</h3>
