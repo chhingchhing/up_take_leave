@@ -299,4 +299,5 @@ class Employee {
 	
 }
 
-// INSERT INTO up_user_profile (`first_name`,`last_name`,`email`,`gender`,`address`,`phone1`,`phone2`,`dob`,`photo`) VALUES ('thida','prn','thiddapen@gmail.com','Female','p[p','0987654453','','','')
+/* End of file: employee.php */
+/* Location of file: application/models/employee.php */

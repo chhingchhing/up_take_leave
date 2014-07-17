@@ -114,5 +114,3 @@ if (isset($_GET['detail'])) {
     </div>
     <!-- /.row -->
 </div>
-
-

@@ -10,10 +10,10 @@ $employees = $empObj->get_all();
 <div class="col-md-12">
 	<div id="dynamic_content">
 		<div class="col-md-12">
-			<a href="" class="btn btn-default btn-sm" role="button" id="clickNewEditEmployee" data-url="application/views/employees/edit.php?act=edit&item=-1" data-toggle="modal" data-target="#newEditEmployee">
+			<a href="" class="btn btn-primary btn-sm" role="button" id="clickNewEditEmployee" data-url="application/views/employees/edit.php?act=edit&item=-1" data-toggle="modal" data-target="#newEditEmployee">
 				<span class="glyphicon glyphicon-user"></span> New Employee
 			</a>
-			<a href="application/controllers/employees/delete.php?act=del_list" class="btn btn-default btn-sm remove" role="button" id="remove" data-url="application/controllers/employees/delete.php?act=del_list">
+			<a href="application/controllers/employees/delete.php?act=del_list" class="btn btn-danger btn-sm remove" role="button" id="remove" data-url="application/controllers/employees/delete.php?act=del_list">
 				<span class="glyphicon glyphicon-trash"></span> Remove
 			</a>
 			<div class="clear_both"></div>

@@ -6,35 +6,35 @@
   ?>
     <li class="list-group-item">
       <!-- <span class="badge">14</span> -->
-      <a href="index.php">Home</a>
+      <a href="index.php"><span class="glyphicon glyphicon-dashboard"></span> Home</a>
     </li>
     <li class="list-group-item">
       <!-- <span class="badge">14</span> -->
-      <a href="?views=employees">Employees Management</a>
+      <a href="?views=employees"><span class="glyphicon glyphicon-user"></span> Employees Management</a>
     </li>
     <li class="list-group-item">
       <!-- <span class="badge">14</span> -->
-      <a href="?views=departments">Department Management</a>
+      <a href="?views=departments"><span class="glyphicon glyphicon-home"></span> Department Management</a>
     </li>
     <li class="list-group-item">
       <span class="badge">14</span>
-      <a href="?views=take_leaves">Take Leave Management</a>
+      <a href="?views=take_leaves"><span class="glyphicon glyphicon-tasks"></span> Take Leave Management</a>
     </li>
     <li class="list-group-item">
       <span class="badge">14</span>
-      <a href="?views=reports">Report</a>
+      <a href="?views=reports"><span class="glyphicon glyphicon-file"></span> Report</a>
     </li>
   <?php  
   }
   ?>
   <li class="list-group-item">
-    <a href="?views=leave_requests">Take Leave</a>
+    <a href="?views=leave_requests"><span class="glyphicon glyphicon-list"></span> Take Leave</a>
   </li>
   <li class="list-group-item">
-    <a href="?views=profiles">Profile</a>
+    <a href="?views=profiles"><span class="glyphicon glyphicon-cog"></span> Profile</a>
   </li>
   <li class="list-group-item">
     <!-- <span class="badge">14</span> -->
-    <a href="?act=logout">Logout</a>
+    <a href="?act=logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
   </li>
 </ul>
