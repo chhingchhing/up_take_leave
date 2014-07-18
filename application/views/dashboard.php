@@ -1,3 +1,4 @@
+</ul>
 <?php 
 /**
 * Home page for admin

@@ -7,6 +7,11 @@ class Assets {
 		return array(
 			array('path' =>'assets/layout/css/bootstrap.min.css', 'media' => 'all'),
 			array('path' =>'assets/layout/css/bootstrap-theme.min.css', 'media' => 'all'),
+			array('path' =>'assets/stylesheets/style.css', 'media' => 'all'),
+		    array('path' =>'assets/layout/css/bootstrap-theme.min.css', 'media' => 'all'),
+		    array('path' =>'assets/layout/css/bootstrap.css', 'media' => 'all'),
+		    array('path' =>'assets/layout/css/bootstrap.css.map', 'media' => 'all'),
+		    array('path' =>'assets/layout/css/bootstrap.min.css', 'media' => 'all'),
 			array('path' =>'assets/stylesheets/login.css', 'media' => 'all'),
 			array('path' =>'assets/stylesheets/layout.css', 'media' => 'all'),
 		);

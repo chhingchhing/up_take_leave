@@ -58,7 +58,7 @@ $all_take_leaves = $dashObj->get_all_appending_leave_mod();
 				?>
 				</td>
 				<td>
-				<a href="?main=take_leave&act=approve&item=<?php echo $take_leaves['take_id'] ?>" id="clickViewEmployee" data-url="?main=take_leave&act=approve&item=<?php echo $take_leaves['take_id'] ?>" class="theTooltip" data-toggle="tooltip" data-placement="top" title="Approve, click it to approve this take leave that is appending to approval.">
+				<a href="?main=take_leave&act=approve&item=<?php echo $take_leaves['take_id'] ?>" id="clickViewEmployee" data-url="application/controllers/take_leave/save.php?main=take_leave&act=approve&item=<?php echo $take_leaves['take_id'] ?>&requester=<?php echo $take_leaves['user_id']; ?>" class="theTooltip clickApproveLeave" data-toggle="tooltip" data-placement="top" title="Approve, click it to approve this take leave that is appending to approval.">
 					  <span class="glyphicon glyphicon-ok"></span>
 				</a>|
 				<a href="" id="clickNewEditEmployee" data-url="application/views/employees/edit.php?act=edit&item=<?php echo $take_leaves['take_id'] ?>" class="theTooltip" data-toggle="tooltip" data-placement="top" title="Deny, click it to reject this take leave that is appending to approval.">

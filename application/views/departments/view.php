@@ -4,20 +4,19 @@
 /**
 * View employee
 */
-class View_employee extends Employee
+class View_department extends Department_mod
 {
 
-	function view($user_id) {
-		return $this->get_info($user_id);
+	function view($department_id) {
+		return $this->get_info($department_id);
 	}
 }
 
-
-$vEmpObj = new View_employee();
-$user_info = array();
+$vDepartmentObj = new View_department();
+$departement_info = array();
 if (isset($_GET['detail'])) {
-	if ($_GET['detail'] == 'employees' && isset($_GET['item'])) {
-		$user_info = $vEmpObj->view($_GET['item']);
+	if ($_GET['detail'] == 'departement' && isset($_GET['item'])) {
+		$departement_info = $vDepartmentObj->view($_GET['item']);
 	}
 }
 ?>
@@ -42,7 +41,7 @@ if (isset($_GET['detail'])) {
 									</a>
 		                        </li>
 		                        <li>
-		                        	<a href="" id="clickNewEditEmployee" data-url="application/views/employees/edit.php?act=edit&item=<?php echo $user_info['user_id'] ?>" class="aEditEployee" data-toggle="modal" data-target="#newEditEmployee">
+		                        	<a href="" id="clickNewEditDepartement" data-url="application/views/department/edit.php?act=edit&item=<?php echo $user_info['department_id'] ?>" class="aEditEployee" data-toggle="modal" data-target="#newEditDepartment">
 										  <span class="glyphicon glyphicon-edit"></span> Edit
 									</a>
 		                        </li>
@@ -58,44 +57,16 @@ if (isset($_GET['detail'])) {
 			  	<table class="table">
 			    	<tbody>
 			    		<tr>
-			    			<th>First Name</th>
-			    			<td><?php echo $user_info['first_name'] ?></td>
+			    			<th>No</th>
+			    			<td><?php echo $departement_info['department_id'] ?></td>
 			    		</tr>
 			    		<tr>
-			    			<th>Last Name</th>
-			    			<td><?php echo $user_info['last_name']; ?></td>
+			    			<th>Departement Name</th>
+			    			<td><?php echo $departement_info['department_name']; ?></td>
 			    		</tr>
 			    		<tr>
-			    			<th>Gender</th>
-			    			<td><?php echo $user_info['gender']; ?></td>
-			    		</tr>
-			    		<tr>
-			    			<th>DOB</th>
-			    			<td><?php echo $user_info['dob']; ?></td>
-			    		</tr>
-			    		<tr>
-			    			<th>Email</th>
-			    			<td><?php echo $user_info['email']; ?></td>
-			    		</tr>
-			    		<tr>
-			    			<th>Phone 1</th>
-			    			<td><?php echo $user_info['phone1']; ?></td>
-			    		</tr>
-			    		<tr>
-			    			<th>Phone 2</th>
-			    			<td><?php echo $user_info['phone2']; ?></td>
-			    		</tr>
-			    		<tr>
-			    			<th>Title</th>
-			    			<td><?php echo $user_info['position_name']; ?></td>
-			    		</tr>
-			    		<tr>
-			    			<th>Department</th>
-			    			<td><?php echo $user_info['department_name']; ?></td>
-			    		</tr>
-			    		<tr>
-			    			<th>Address</th>
-			    			<td><?php echo $user_info['address']; ?></td>
+			    			<th>Description</th>
+			    			<td><?php echo $departement_info['description']; ?></td>
 			    		</tr>
 			    	</tbody>
 			  	</table>

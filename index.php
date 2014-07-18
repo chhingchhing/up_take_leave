@@ -7,6 +7,7 @@ include("application/models/employee.php");
 include("application/models/dashboard_mod.php");
 include("application/models/report.php");
 include("application/models/take_leave.php");
+include("application/models/department.php");
 
 /**
 * Index class
@@ -77,4 +78,5 @@ if ( !isset($_SESSION['logged_id']) ) {
 </div>
 
 <?php $sysObj->load_page("application/views/partials/modals/view_modal"); ?>
+<?php $sysObj->load_page("application/views/partials/modals/departement_modal"); ?>
 <?php include("application/views/partials/footer.php"); ?>
