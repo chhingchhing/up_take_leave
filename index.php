@@ -4,6 +4,7 @@ include("application/controllers/system.php");
 include("application/core/assets.php");
 include("application/controllers/main.php");
 include("application/models/employee.php");
+include("application/models/dashboard_mod.php");
 
 /**
 * Index class

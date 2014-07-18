@@ -3,6 +3,11 @@ jQuery(function(){
 
 });
 
+// Tooltip
+$("body").on("mouseover", ".theTooltip", function(){
+	$(this).tooltip('show');
+});
+
 $('body').on('click', '#clickNewEditEmployee', function() {
 	var urlRequest = jQuery(this).attr('data-url');
 	var request = jQuery.ajax({
