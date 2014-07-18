@@ -26,6 +26,7 @@ $all_take_leaves = $dashObj->get_all_appending_leave_mod();
 			<th>End Date</th>
 			<th>Amount</th>
 			<th>Status</th>
+			<th>Approver</th>
 			<th>Option</th>
 		</tr>
 	</thead>
@@ -39,18 +40,23 @@ $all_take_leaves = $dashObj->get_all_appending_leave_mod();
 				<td><input type="checkbox" name="checkedID" value="<?php echo $take_leaves['take_id']; ?>" class="checkedID" /></td>
 				<td><?php echo $no; ?></td>
 				<td><?php echo ucfirst($take_leaves['content']); ?></td>
-				<td><?php echo strtoupper($take_leaves['start_date']); ?></td>
+				<td><?php echo $take_leaves['start_date']; ?></td>
 				<td><?php echo $take_leaves['end_date']; ?></td>
 				<td><?php echo $take_leaves['number_of_leave']; ?></td>
 				<td><?php 
 				if (is_null($take_leaves['approved_by'])) { ?>
-					<a href="?main=take_leave&act=approve&item=<?php echo $take_leaves['take_id'] ?>" id="clickViewEmployee" data-url="?main=take_leave&act=approve&item=<?php echo $take_leaves['take_id'] ?>" class="theTooltip" data-toggle="tooltip" data-placement="top" title="Appending, click it to approve the take leave.">
+					<a href="" id="clickApproveLeave" data-url="application/controllers/take_leave/save.php?main=take_leave&act=approve&item=<?php echo $take_leaves['take_id'] ?>&requester=<?php echo $take_leaves['user_id']; ?>" class="theTooltip clickApproveLeave" data-toggle="tooltip" data-placement="top" title="Appending, click it to approve the take leave.">
 						  <span class="glyphicon glyphicon-time"></span>
 					</a>
 				<?php } else {
 					echo "Approved";
 				}
 				?></td>
+				<td>
+				<?php 
+					echo ucwords($take_leaves['approved_by']);
+				?>
+				</td>
 				<td>
 				<a href="?main=take_leave&act=approve&item=<?php echo $take_leaves['take_id'] ?>" id="clickViewEmployee" data-url="?main=take_leave&act=approve&item=<?php echo $take_leaves['take_id'] ?>" class="theTooltip" data-toggle="tooltip" data-placement="top" title="Approve, click it to approve this take leave that is appending to approval.">
 					  <span class="glyphicon glyphicon-ok"></span>

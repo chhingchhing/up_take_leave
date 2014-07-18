@@ -24,9 +24,34 @@ class Save_take_leave {
         echo json_encode($arr_errors);
 	}
 
+    function approveTakeLeaveByID($take_id, $requester_id) {
+        $tleaveModObj = new Take_leave_mod();
+        $approverName = $_SESSION['full_name'];
+        $approverID = $_SESSION['logged_id'];
+        if ($tleaveModObj->approveTakeLeaveByID($take_id, $approverName, $approverID, $requester_id)) {
+            $arr_errors = array(
+                "success" => true,
+                "sms_type" => "success",
+                "sms_title" => "Congradulation!",
+                "sms_value" => "You have approved on take leave ID $take_id with successfully.",
+            );
+        } else {
+            $arr_errors = array(
+                "success" => false,
+                "sms_type" => "danger",
+                "sms_title" => "Sorry!",
+                "sms_value" => "You have approved take leave with un-successfully.",
+            );
+        }
+        echo json_encode($arr_errors);
+    }
+
 }
 
 
+// Declare object of take leave
+$saveActionTLObj = new Save_take_leave();
+// For do leave request
 if (isset($_POST['txtSdate'])) {
 	$take_leave_data = array(
         'content' => $_POST['content_reason'],
@@ -35,9 +60,13 @@ if (isset($_POST['txtSdate'])) {
         'number_of_leave' => $_POST['txtAmountTakeLeave'],
         'user_id' => $_SESSION['logged_id']
     );
-    $saveActionTLObj = new Save_take_leave();
+    
     $saveActionTLObj->save($take_leave_data);
 
+} else if (isset($_GET['main'])) {
+    if ($_GET['main'] == "take_leave" && $_GET['act'] == "approve" && isset($_GET['item']) && isset($_GET['requester'])) {
+        $saveActionTLObj->approveTakeLeaveByID($_GET['item'], $_GET['requester']);
+    }
 } else {
     $arr_errors = array(
         "success" => false,
@@ -46,5 +75,11 @@ if (isset($_POST['txtSdate'])) {
         "sms_value" => "Please fill the form for all input fields that required.",
     );
     echo json_encode($arr_errors);
+}
+
+
+// For approve
+if (isset($_POST['main'])) {
+    echo "Main ha";
 }
 

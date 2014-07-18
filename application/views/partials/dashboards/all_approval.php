@@ -39,10 +39,10 @@ $all_take_leaves = $dashObj->get_all_approve_leave_mod();
 				<td><input type="checkbox" name="checkedID" value="<?php echo $take_leaves['app_id']; ?>" class="checkedID" /></td>
 				<td><?php echo $no; ?></td>
 				<td><?php echo ucfirst($take_leaves['reason']); ?></td>
-				<td><?php echo strtoupper($take_leaves['s_date']); ?></td>
+				<td><?php echo $take_leaves['s_date']; ?></td>
 				<td><?php echo $take_leaves['e_date']; ?></td>
 				<td><?php echo $take_leaves['app_amount']; ?></td>
-				<td><?php echo $take_leaves['approver']; ?></td>
+				<td><?php echo ucwords($take_leaves['approver']); ?></td>
 				<!-- <td>
 				<a href="?main=take_leave&act=approve&item=<?php echo $take_leaves['app_id'] ?>" id="clickViewEmployee" data-url="?main=take_leave&act=approve&item=<?php echo $take_leaves['app_id'] ?>" class="theTooltip" data-toggle="tooltip" data-placement="top" title="Approve, click it to approve this take leave that is appending to approval.">
 					  <span class="glyphicon glyphicon-ok"></span>

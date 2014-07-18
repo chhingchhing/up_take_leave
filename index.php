@@ -5,6 +5,8 @@ include("application/core/assets.php");
 include("application/controllers/main.php");
 include("application/models/employee.php");
 include("application/models/dashboard_mod.php");
+include("application/models/report.php");
+include("application/models/take_leave.php");
 
 /**
 * Index class

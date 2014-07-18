@@ -44,6 +44,9 @@ $amount_leave_approved = mysql_num_rows($all_approved_leave);
 </div>
 
 <div class="table-responsive">
+	<div class="col-md-12">
+		<div id="feedback_error"></div>
+	</div>
 	<!-- Nav tabs -->
 	<ul class="nav nav-tabs" role="tablist">
 	  <li class="active"><a href="#allAppending" role="tab" data-toggle="tab">Appending <span class="badge"><?php echo $amount_leave_appending; ?></span></a></li>
@@ -64,12 +67,12 @@ $amount_leave_approved = mysql_num_rows($all_approved_leave);
 	  		$sysObj->load_page("application/views/partials/dashboards/all_approval");
 	  	?>
 	  </div>
-	  <div class="tab-pane" id="messages">
+	  <!-- <div class="tab-pane" id="messages">
 	  	message
 	  </div>
 	  <div class="tab-pane" id="settings">
 	  	setting
-	  </div>
+	  </div> -->
 	</div>
 
 </div>
