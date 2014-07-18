@@ -1,10 +1,26 @@
-<form class="form-signin" role="form" action="<?php echo URL;?>" method="post">
-<!-- <form class="form-signin" role="form" action="application/controllers/system.php" method="post"> -->
+<html>
+    <title><head>Take leave request login</head></title>
+    
+    <body class="site com_login view-login layout-default task- itemid- ">
+        <div class="container"><div id="content">
+        <div id="element-box" class="login well">
+           
+<form class="form-signin form-inline" role="form" action="<?php echo URL;?>" method="post">
+    <fieldset class="loginform">
 	<h2 class="form-signin-heading">Please sign in</h2>
-	<input type="email" name="email" class="input-control" placeholder="Email address" required autofocus>
-	<input type="password" name="password" class="input-control" placeholder="Password" required>
+        <hr>
+        <div class="input-group">
+        <span class="input-group-addon glyphicon glyphicon-user"></span>
+	<input type="email" name="email" class="form-control" placeholder="Email address" required autofocus></div><br/><br/>
+        <div class="input-group">
+            <span class="input-group-addon glyphicon glyphicon-lock" style="height: 43px;"></span>
+	<input type="password" name="password" class="form-control" placeholder="Your Password" required></div><br/><br/>
 	<label class="checkbox">
 	  <input type="checkbox" value="remember-me"> Remember me
 	</label>
-	<button class="up-btn" type="submit" name="btnSignIn">Sign in</button>
+	<button class="up-btn btn btn-primary" type="submit" name="btnSignIn"><i class="glyphicon glyphicon-lock icon-white"></i>Sign in</button>
+    </fieldset>
 </form>
+</div></div></div>
+    </body>   
+</html>

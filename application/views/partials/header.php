@@ -10,7 +10,6 @@
 
     <title><?php echo TITLE; ?></title>
     <?php 
-    
     foreach ($assetsObj->get_css_files() as $css_file) {
       ?>
     <link rel="stylesheet" rev="stylesheet" href="<?php echo $css_file['path'].'?';?>" media="<?php echo $css_file['media'];?>" />
@@ -21,3 +20,4 @@
   </head>
 
   <body>
+      
