@@ -63,9 +63,6 @@ if ( !isset($_SESSION['logged_id']) ) {
 
 		// Loading main page of management
 		if (isset($_GET['views'])) {
-			/*if ($_GET['views'] == "employee") {
-				$sysObj->load_page("application/views/employees/manage");
-			}*/
 			$sysObj->load_page("application/views/".$_GET['views']."/manage");
 		} else {
 			//$empObj = new Employee();
@@ -107,5 +104,5 @@ if ( !isset($_SESSION['logged_id']) ) {
            <div class="row clearfix footer">
            <center><p>Copy@right By: <a href="#">Codingate Team</a></p></center>
     </div>
-
+<?php $sysObj->load_page("application/views/partials/modals/view_modal"); ?>
 <?php include("application/views/partials/footer.php"); ?>

@@ -1,15 +1,3 @@
-<!-- <form class="form-signin" role="form" action="<?php echo URL;?>" method="post">
- --><!-- <form class="form-signin" role="form" action="application/controllers/system.php" method="post"> -->
-	<!-- <h2 class="form-signin-heading">Please sign in</h2>
-	<input type="email" name="email" class="input-control" placeholder="Email address" required autofocus>
-	<input type="password" name="password" class="input-control" placeholder="Password" required>
-	<label class="checkbox">
-	  <input type="checkbox" value="remember-me"> Remember me
-	</label>
-	<button class="up-btn" type="submit" name="btnSignIn">Sign in</button>
-	<button type="button" class="btn btn-primary btn-sm perm_delete" title="delete record as permanent..." data-toggle="tooltip" id="tooltip">Remove Permenent</button>
-</form> -->
-
 <div class="container">
     <div class="row">
         <div class="col-sm-6 col-md-4 col-md-offset-4">
