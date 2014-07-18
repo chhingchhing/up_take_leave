@@ -1,10 +1,25 @@
 <?php 
-$sysObj = new System();
-if (!$sysObj->is_logged()) {
-	echo "No permission to do it.";
-} else {
-	$empObj = new Employee();
-	$user_info = $empObj->get_info($_SESSION['logged_id']);
+// include("../../models/employee.php");
+
+/**
+* View employee
+*/
+class View_employee extends Employee
+{
+
+	function view($user_id) {
+		return $this->get_info($user_id);
+	}
+}
+
+
+$vEmpObj = new View_employee();
+$user_info = array();
+if (isset($_GET['detail'])) {
+	if ($_GET['detail'] == 'employees' && isset($_GET['item'])) {
+		$user_info = $vEmpObj->view($_GET['item']);
+	}
+}
 ?>
 
 <div id="page-wrapper">
@@ -14,7 +29,7 @@ if (!$sysObj->is_logged()) {
 		    <div class="panel panel-default">
 		        <div class="panel-heading">
 		            <!-- <i class="fa fa-bar-chart-o fa-fw"></i> -->
-		        	<i class="glyphicon glyphicon-user"></i> Profile's Information
+		        	<i class="fa fa-user"></i> Employee's Information
 		            <div class="pull-right">
 		            	<div class="btn-group">
 		                    <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
@@ -44,6 +59,8 @@ if (!$sysObj->is_logged()) {
 		        </div>
 		        <!-- /.panel-heading -->
 		        <div class="panel-body">
+		            <!-- <div id="morris-area-chart"></div> -->
+
 		        </div>
 		        <!-- Table -->
 			  	<table class="table">
@@ -97,7 +114,3 @@ if (!$sysObj->is_logged()) {
     </div>
     <!-- /.row -->
 </div>
-
-<?php
-}
-?>
