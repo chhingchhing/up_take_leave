@@ -32,8 +32,9 @@ include("application/views/partials/header.php");
 // $select_menu = "main.php";
 ?>
 <div id="wrapper">
-<?php 
-if ( !isset($_SESSION['logged_id']) ) {
+<!-- <div class="container"> -->
+<div class="col-md-12"> 
+<?php if ( !isset($_SESSION['logged_id']) ) {
 	// include("application/views/login.php");
 	$sysObj->load_page("application/views/login");
 	// header('Location: '.$_SERVER['PHP_SELF']);
@@ -52,23 +53,19 @@ if ( !isset($_SESSION['logged_id']) ) {
 	<div class="col-md-9">
 
 	<?php
-	/*if ( !isset($_SESSION['logged_id']) ) {
-		// include("application/views/login.php");
-		$sysObj->load_page("application/views/login");
-		// header('Location: '.$_SERVER['PHP_SELF']);
-	} else {*/
-
-		/*$mainObj->index();
-		$mainObj->show_dashboard();*/
-
 		// Loading main page of management
 		if (isset($_GET['views'])) {
 			$sysObj->load_page("application/views/".$_GET['views']."/manage");
+		} else if (isset($_GET['detail'])) {
+			$sysObj->load_page("application/views/".$_GET['detail']."/view");
 		} else {
+
 			//$empObj = new Employee();
 			//$info = $empObj->get_info($_SESSION['logged_id']);
 			// var_dump($info['usertype_name']); die();
 
+			$empObj = new Employee();
+			$info = $empObj->get_info($_SESSION['logged_id']);
 			// First is loading dashboard page
 			//$sysObj->load_page("application/views/dashboard");
 			?>
@@ -93,7 +90,6 @@ if ( !isset($_SESSION['logged_id']) ) {
 				}
 			}
 		}
-	// }
 	?>
 	</div>
 

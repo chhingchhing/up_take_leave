@@ -35,6 +35,14 @@ class System extends System_mod {
 		return include($path.".php");
 	}
 
+	// Check session of user logged in
+	function is_logged() {
+		if (!$_SESSION['logged_id']) {
+			return false;
+		}
+		return true;
+	}
+
 }
 
 
