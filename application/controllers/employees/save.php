@@ -75,7 +75,6 @@ if (isset($_POST['txtFname'])) {
                 $user_profile_data['first_name'].' '.$user_profile_data['last_name'],'user_id'=>$user_data['user_id'],
                 'actions'=>'add'));*/
 } else {
-    echo "Nothing";
     $arr_errors = array(
         "success" => false,
         "sms_type" => "warning",

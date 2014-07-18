@@ -16,20 +16,20 @@
       <!-- <span class="badge">14</span> -->
       <a href="?views=departments"><span class="glyphicon glyphicon-home"></span> Department Management</a>
     </li>
-    <li class="list-group-item">
+    <!-- <li class="list-group-item">
       <span class="badge">14</span>
       <a href="?views=take_leaves"><span class="glyphicon glyphicon-tasks"></span> Take Leave Management</a>
-    </li>
+    </li> -->
     <li class="list-group-item">
-      <span class="badge">14</span>
       <a href="?views=reports"><span class="glyphicon glyphicon-file"></span> Report</a>
     </li>
   <?php  
-  }
-  ?>
+  } else { ?>
   <li class="list-group-item">
     <a href="?views=leave_requests"><span class="glyphicon glyphicon-list"></span> Take Leave</a>
   </li>
+  <?php }
+  ?>
   <li class="list-group-item">
     <a href="?views=profiles"><span class="glyphicon glyphicon-cog"></span> Profile</a>
   </li>

@@ -26,7 +26,7 @@ $dashObj = new Dashboard();
 $all_take_leaves = $dashObj->get_all_appending_leave_mod();
 $amount_leave_appending = mysql_num_rows($all_take_leaves);
 
-$all_approved_leave = $dashObj->get_all_appending_leave_mod();
+$all_approved_leave = $dashObj->get_all_approve_leave_mod();
 $amount_leave_approved = mysql_num_rows($all_approved_leave);
 
 ?>
@@ -34,7 +34,7 @@ $amount_leave_approved = mysql_num_rows($all_approved_leave);
 <!-- <h4>Welcome Page</h4> -->
 
 <div class="col-md-12">
-	<a href="" class="btn btn-primary btn-sm" role="button" id="clickNewEditEmployee" data-url="application/views/employees/edit.php?act=edit&item=-1" data-toggle="modal" data-target="#newEditEmployee">
+	<a href="" class="btn btn-primary btn-sm" role="button" id="clickNewLeaveRequest" data-url="application/views/leave_requests/new.php?act=new&item=-1" data-toggle="modal" data-target="#newLeaveRequet">
 		<span class="glyphicon glyphicon-tasks"></span> Do request
 	</a>
 	<a href="application/controllers/employees/delete.php?act=del_list" class="btn btn-danger btn-sm remove" role="button" id="remove" data-url="application/controllers/employees/delete.php?act=del_list">
