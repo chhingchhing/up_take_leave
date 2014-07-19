@@ -4,7 +4,11 @@ include("application/controllers/system.php");
 include("application/core/assets.php");
 include("application/controllers/main.php");
 include("application/models/employee.php");
+<<<<<<< HEAD
 include("application/models/department.php");
+=======
+include("application/models/dashboard_mod.php");
+>>>>>>> 347abcc9dbe6f447e565e76e50d513f3c9048cdc
 
 /**
 * Index class

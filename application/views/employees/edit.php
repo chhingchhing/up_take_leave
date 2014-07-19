@@ -62,6 +62,7 @@ if (isset($_GET['act'])) {
     <div class="col-sm-8">
       <input type="text" class="form-control" id="dob" placeholder="Date Of Birth" name="txtDOB" value="<?php echo $dob; ?>">
     </div>
+    <p class="help-block">DOB: 1992-04-25.</p>
   </div>
   <div class="form-group">
     <label for="inputEmail" class="col-sm-4 control-label">Email</label>
