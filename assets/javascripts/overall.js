@@ -2,6 +2,23 @@ jQuery(function(){
 
 
 });
+//
+$('body').on('click', '#clickNewEditDepartement', function() {
+	var urlRequest = jQuery(this).attr('data-url');
+	var request = jQuery.ajax({
+			url: urlRequest,
+			type: "POST",
+			dataType: "html",
+			success:function(response){
+				jQuery(".modal-detail-body").html(response);
+			}
+		});
+	request.fail(function( jqXHR, textStatus ) { // fail connect to a function in controller activities.php		
+		alert("connecting failed...");
+	});
+});
+//
+
 
 $('body').on('click', '#clickNewEditEmployee', function() {
 	var urlRequest = jQuery(this).attr('data-url');

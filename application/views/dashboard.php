@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 content of dashboard is over there!
 <ul>
 	<li><a href="?views=employees">Employees Management</a></li>
@@ -9,8 +9,6 @@ content of dashboard is over there!
 </ul>
 
 </ul>
-=======
->>>>>>> 2f7e6d03ff006b194beb75a2b4f0a409a546f2b4
 <?php 
 $empObj = new Employee();
 $info = $empObj->get_info($_SESSION['logged_id']);
@@ -18,8 +16,6 @@ $info = $empObj->get_info($_SESSION['logged_id']);
 ?>
 
 <h3>Welcome Page</h3>
-<<<<<<< HEAD
-=======
 
 <div class="table-responsive">
 	<!-- Nav tabs -->
@@ -47,4 +43,3 @@ $info = $empObj->get_info($_SESSION['logged_id']);
 	</div>
 
 </div>
->>>>>>> 2f7e6d03ff006b194beb75a2b4f0a409a546f2b4

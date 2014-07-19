@@ -4,6 +4,7 @@ include("application/controllers/system.php");
 include("application/core/assets.php");
 include("application/controllers/main.php");
 include("application/models/employee.php");
+include("application/models/department.php");
 
 /**
 * Index class
@@ -16,7 +17,6 @@ class Index extends Main
 	}*/
 
 }
-
 // Own object
 $ownObj = new Index();
 // Create object
